@@ -77,7 +77,7 @@ const BaiTap: NextPage = () => {
     <>
       <Layout title="Bài tập">
         <div className=" text-2xl">
-          <ReactMarkdown children={markdown} rehypePlugins={[rehypeRaw]} />
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{markdown}</ReactMarkdown>
         </div>
         <div className="grid place-items-center">
           <h1 className="text-4xl font-extrabold ">ANSWER</h1>
