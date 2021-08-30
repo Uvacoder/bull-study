@@ -1,0 +1,28 @@
+{
+  "name": "bull-study",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "framer-motion": "^4.1.17",
+    "next": "11.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-markdown": "^7.0.1",
+    "rehype-raw": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.19",
+    "autoprefixer": "^10.3.3",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.8",
+    "typescript": "4.4.2"
+  }
+}
