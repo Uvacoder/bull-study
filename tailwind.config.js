@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         pacifico: ['"Pacifico"', "cursive"],
+        openSans: ['"Open Sans"', "sans-serif"],
       },
     },
   },
