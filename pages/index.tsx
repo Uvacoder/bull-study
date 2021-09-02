@@ -1,44 +1,58 @@
-import Link from "next/link";
 import type { NextPage } from "next";
-import React, { useState } from "react";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+
+import Layout from "../components/Layout";
+import car from "../public/reinhart-julian-VsXHzSdwuik-unsplash.jpg";
 
 import { motion } from "framer-motion";
-import Layout from "../components/Layout";
 
 const Home: NextPage = () => {
   return (
     <>
       <Layout title="Home">
-        <div className="text-center ">
-          <h1 className="font-bold text-7xl mt-36 mb-40">
-            <span className="text-6xl text-gray-500">English</span> with{" "}
-            <span className="text-6xl text-gray-500">Tùng</span>
-          </h1>
+        <div className="w-screen h-screen -z-10 absolute">
+          <Image src={car} layout="fill" objectFit="cover" />
         </div>
-        <div className="grid place-items-center">
-          <Link href="/lythuyet">
+
+        <div className=" grid place-items-center">
+          <Link href="/checkin">
             <motion.div
               animate={{
                 y: [100, 0],
                 opacity: [0, 1],
                 transition: { duration: 1 },
               }}
-              className="bg-yellow-400 px-32 py-12 my-10 text-white text-center font-bold text-4xl rounded-md"
+              className="bg-yellow-400 px-32 py-12 my-10 text-white text-center font-bold text-5xl rounded-md cursor-pointer"
             >
-              Lý thuyết
+              Check in
             </motion.div>
           </Link>
 
-          <Link href="/baitap">
+          <Link href="/lessons">
             <motion.div
               animate={{
                 y: [100, 0],
                 opacity: [0, 1],
-                transition: { duration: 1, delay: 0.3 },
+                transition: { duration: 1 },
               }}
-              className="bg-green-400 px-28 py-12 text-white text-center font-bold text-4xl rounded-md"
+              className="bg-gray-400 px-32 py-12 my-10 text-white text-center font-bold text-5xl rounded-md cursor-pointer"
             >
-              Làm bài tập
+              Learn
+            </motion.div>
+          </Link>
+
+          <Link href="/test">
+            <motion.div
+              animate={{
+                y: [100, 0],
+                opacity: [0, 1],
+                transition: { duration: 1 },
+              }}
+              className="bg-green-400 px-32 py-12 my-10 text-white text-center font-bold text-5xl rounded-md cursor-pointer"
+            >
+              Test
             </motion.div>
           </Link>
         </div>

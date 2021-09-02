@@ -48,7 +48,7 @@ export default function Input() {
       {contents.map((content) => content)}
       <main className="flex">
         <section className="grid place-items-center m-10">
-          <Link href="/lythuyet">
+          <Link href="/lessons">
             <div
               onClick={submitHandler}
               className="bg-yellow-400 px-5 py-11 m-3 text-white text-2xl  font-bold text-center rounded-md"
@@ -59,7 +59,7 @@ export default function Input() {
         </section>
 
         <section className="grid place-items-center m-10">
-          <Link href="/thongbao">
+          <Link href="/notification">
             <div
               onClick={submitHandler}
               className="bg-green-400 p-10 m-3 text-white text-2xl  font-bold text-center rounded-md"
