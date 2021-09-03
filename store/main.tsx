@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import checkinReducer from "./checkin";
+import answersReducer from "./answers";
 
 const store = configureStore({
-  reducer: { checkin: checkinReducer },
+  reducer: { checkin: checkinReducer, answers: answersReducer },
 });
 
 export default store;

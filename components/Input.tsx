@@ -1,7 +1,22 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useContext, useEffect, useState } from "react";
+import axios from "axios";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { answersActions, AnswersRecord } from "../store/answers";
 
-const initialValues = {
+interface Props {
+  cau1: string;
+  cau2: string;
+  cau3: string;
+  cau4: string;
+  cau5: string;
+  cau6: string;
+  cau7: string;
+  cau8: string;
+  cau9: string;
+}
+
+const initialValues: Props = {
   cau1: "",
   cau2: "",
   cau3: "",
@@ -11,27 +26,33 @@ const initialValues = {
   cau7: "",
   cau8: "",
   cau9: "",
-  cau10: "",
 };
 
 export default function Input() {
   const [userInput, setUserInput] = useState(initialValues);
+  const dispatch = useDispatch();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setUserInput({ ...userInput, [name]: value });
   };
 
-  const submitHandler = () => {
-    localStorage.setItem("answers", JSON.stringify(userInput));
+  const submitHandler = async () => {
+    //  dispatch(answersActions.submit(userInput));
+    const data = await axios.post(
+      "https://bull-study-default-rtdb.asia-southeast1.firebasedatabase.app/answers.json",
+      { answers: userInput },
+      { headers: { "Content-Type": "application/json" } }
+    );
+    console.log(data);
   };
 
   const contents = [];
   let content = <h1></h1>;
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 1; i <= 9; i++) {
     content = (
       <h1 className="text-xl m-6">
-        Câu {i}: &nbsp;
+        💩 {i}. &nbsp;
         <input
           id={String(i)}
           name={`cau${i}`}
@@ -45,30 +66,19 @@ export default function Input() {
 
   return (
     <>
-      {contents.map((content) => content)}
-      <main className="flex">
-        <section className="grid place-items-center m-10">
-          <Link href="/lessons">
-            <div
-              onClick={submitHandler}
-              className="bg-yellow-400 px-5 py-11 m-3 text-white text-2xl  font-bold text-center rounded-md"
-            >
-              Xem lại lý thuyết
-            </div>
-          </Link>
-        </section>
-
-        <section className="grid place-items-center m-10">
-          <Link href="/notification">
-            <div
-              onClick={submitHandler}
-              className="bg-green-400 p-10 m-3 text-white text-2xl  font-bold text-center rounded-md"
-            >
-              Đã làm xong !
-            </div>
-          </Link>
-        </section>
+      <main className="w-screen grid place-items-center">
+        {contents.map((content) => content)}
       </main>
+      <section className="grid place-items-center m-10">
+        <Link href="/notification">
+          <div
+            onClick={submitHandler}
+            className="bg-green-400 p-10 m-3 text-white text-2xl  font-bold text-center rounded-md"
+          >
+            Done
+          </div>
+        </Link>
+      </section>
     </>
   );
 }

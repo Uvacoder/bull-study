@@ -17,6 +17,7 @@ const Home: NextPage = () => {
         </div>
 
         <div className=" grid place-items-center">
+          {/*
           <Link href="/checkin">
             <motion.div
               animate={{
@@ -29,30 +30,31 @@ const Home: NextPage = () => {
               Check in
             </motion.div>
           </Link>
+                              */}
 
-          <Link href="/lessons">
+          <Link href="/math">
             <motion.div
               animate={{
                 y: [100, 0],
                 opacity: [0, 1],
                 transition: { duration: 1 },
               }}
-              className="bg-gray-400 px-32 py-12 my-10 text-white text-center font-bold text-5xl rounded-md cursor-pointer"
+              className="bg-white px-20 py-10 my-10 text-black text-center font-bold text-5xl rounded-md cursor-pointer"
             >
-              Learn
+              Math 👨🏻‍🚀
             </motion.div>
           </Link>
 
-          <Link href="/test">
+          <Link href="/english">
             <motion.div
               animate={{
                 y: [100, 0],
                 opacity: [0, 1],
                 transition: { duration: 1 },
               }}
-              className="bg-green-400 px-32 py-12 my-10 text-white text-center font-bold text-5xl rounded-md cursor-pointer"
+              className="bg-white px-20 py-10 my-10 text-black text-center font-bold text-5xl rounded-md cursor-pointer"
             >
-              Test
+              English 🦑
             </motion.div>
           </Link>
         </div>
