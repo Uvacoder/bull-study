@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Image from "next/image";
 
-import baitap from "../public/baitap.png";
+import baitap from "../public/2.png";
 import Layout from "../components/Layout";
 import Input from "../components/Input";
 

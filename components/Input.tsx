@@ -10,10 +10,6 @@ interface Props {
   cau3: string;
   cau4: string;
   cau5: string;
-  cau6: string;
-  cau7: string;
-  cau8: string;
-  cau9: string;
 }
 
 const initialValues: Props = {
@@ -22,10 +18,6 @@ const initialValues: Props = {
   cau3: "",
   cau4: "",
   cau5: "",
-  cau6: "",
-  cau7: "",
-  cau8: "",
-  cau9: "",
 };
 
 export default function Input() {
@@ -44,12 +36,11 @@ export default function Input() {
       { answers: userInput },
       { headers: { "Content-Type": "application/json" } }
     );
-    console.log(data);
   };
 
   const contents = [];
   let content = <h1></h1>;
-  for (let i = 1; i <= 9; i++) {
+  for (let i = 1; i <= 5; i++) {
     content = (
       <h1 className="text-xl m-6">
         💩 {i}. &nbsp;
